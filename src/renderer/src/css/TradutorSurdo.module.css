@@ -1,0 +1,20 @@
+.container {
+    border: 3px solid khaki;
+    height:90%;
+    width: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.camera {
+    border: 2px solid skyblue;
+    height: 90%;
+    width:45% ;
+}
+
+.avatar {
+    border: 2px solid rgb(193, 235, 135);
+    height: 90%;
+    width:45% ;
+}
