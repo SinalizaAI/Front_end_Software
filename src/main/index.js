@@ -1,14 +1,28 @@
-import { app, shell, BrowserWindow, ipcMain } from 'electron'
+import { app, BrowserWindow, ipcMain } from 'electron'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
-import icon from '../../resources/icon.png?asset'
+
+let telaInicial = null
+let janelaSurdo = null
+let janelaOuvinte = null
 
 function createWindows() {
+  telaInicial = new BrowserWindow({
+    width: 1000,
+    height: 700,
+    show: false,
+    title: 'SinalizaAI',
+    autoHideMenuBar: true,
+    webPreferences: {
+      preload: join(__dirname, '../preload/index.js'),
+      sandbox: false
+    }
+  })
 
-  const janelaSurdo = new BrowserWindow({
+  janelaSurdo = new BrowserWindow({
     width: 900,
     height: 670,
-    show: false,
+    show: true, // <-- abre direto
     title: 'SinalizaAI - Surdo',
     autoHideMenuBar: true,
     webPreferences: {
@@ -17,10 +31,10 @@ function createWindows() {
     }
   })
 
-  const janelaOuvinte = new BrowserWindow({
+  janelaOuvinte = new BrowserWindow({
     width: 900,
     height: 670,
-    show: false,
+    show: true, // <-- abre direto
     title: 'SinalizaAI - Ouvinte',
     autoHideMenuBar: true,
     webPreferences: {
@@ -29,20 +43,21 @@ function createWindows() {
     }
   })
 
-  janelaSurdo.on('ready-to-show', () => janelaSurdo.show())
-  janelaOuvinte.on('ready-to-show', () => janelaOuvinte.show())
+  telaInicial.on('ready-to-show', () => telaInicial.show())
 
   if (is.dev && process.env['ELECTRON_RENDERER_URL']) {
+    telaInicial.loadURL(process.env['ELECTRON_RENDERER_URL'] + '/#/')
     janelaSurdo.loadURL(process.env['ELECTRON_RENDERER_URL'] + '/#/surdo')
     janelaOuvinte.loadURL(process.env['ELECTRON_RENDERER_URL'] + '/#/ouvinte')
   } else {
+    telaInicial.loadFile(join(__dirname, '../renderer/index.html'), { hash: '/' })
     janelaSurdo.loadFile(join(__dirname, '../renderer/index.html'), { hash: '/surdo' })
     janelaOuvinte.loadFile(join(__dirname, '../renderer/index.html'), { hash: '/ouvinte' })
   }
 }
 
 app.whenReady().then(() => {
-  electronApp.setAppUserModelId('com.sinalizaai.app')
+  electronApp.setAppUserModelId('com.electron')
 
   app.on('browser-window-created', (_, window) => {
     optimizer.watchWindowShortcuts(window)
@@ -50,13 +65,19 @@ app.whenReady().then(() => {
 
   createWindows()
 
-  app.on('activate', function () {
+  app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) createWindows()
   })
 })
 
 app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
-    app.quit()
-  }
+  if (process.platform !== 'darwin') app.quit()
+})
+
+ipcMain.on('abrir-surdo', () => {
+  if (janelaSurdo) janelaSurdo.show()
+})
+
+ipcMain.on('abrir-ouvinte', () => {
+  if (janelaOuvinte) janelaOuvinte.show()
 })
