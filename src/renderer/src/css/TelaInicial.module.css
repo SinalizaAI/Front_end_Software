@@ -1,0 +1,44 @@
+.container {
+  min-height: 100vh;
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  cursor: pointer;
+  gap: 0px;
+}
+
+.logo {
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+  margin-bottom: 16px;
+}
+.sistema {
+  font-size: 20px;
+  color: #333;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+}
+
+.titulo {
+  font-size: 100px;
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  color: #000;
+  margin: 0;
+}
+
+.ai {
+  color: #f5b942;
+}
+
+.toque {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+  margin-top: 30px;
+}
