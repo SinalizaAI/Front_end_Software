@@ -22,7 +22,7 @@ function createWindows() {
   janelaSurdo = new BrowserWindow({
     width: 900,
     height: 670,
-    show: true, // <-- abre direto
+    show: false,
     title: 'SinalizaAI - Surdo',
     autoHideMenuBar: true,
     webPreferences: {
@@ -34,7 +34,7 @@ function createWindows() {
   janelaOuvinte = new BrowserWindow({
     width: 900,
     height: 670,
-    show: true, // <-- abre direto
+    show: false,
     title: 'SinalizaAI - Ouvinte',
     autoHideMenuBar: true,
     webPreferences: {
@@ -44,6 +44,8 @@ function createWindows() {
   })
 
   telaInicial.on('ready-to-show', () => telaInicial.show())
+  janelaSurdo.on('ready-to-show', () => janelaSurdo.show())
+  janelaOuvinte.on('ready-to-show', () => janelaOuvinte.show())
 
   if (is.dev && process.env['ELECTRON_RENDERER_URL']) {
     telaInicial.loadURL(process.env['ELECTRON_RENDERER_URL'] + '/#/')
@@ -57,7 +59,7 @@ function createWindows() {
 }
 
 app.whenReady().then(() => {
-  electronApp.setAppUserModelId('com.electron')
+  electronApp.setAppUserModelId('com.sinalizaai.app')
 
   app.on('browser-window-created', (_, window) => {
     optimizer.watchWindowShortcuts(window)
