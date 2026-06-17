@@ -1,12 +1,36 @@
-import styler from "../css/recuperar_form.module.css"
+import styler from '../css/Recuperar_form.module.css'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import logo from '../assets/logo.png'
 
-function Recuperar_Form({ onVoltar, onAvancarEmail, onAvancarSMS }) {
+function Recupera_Forms() {
+  const navigate = useNavigate()
+  const [valor, setValor] = useState('')
+
+  function handleEnviar() {
+    if (valor.includes('@')) {
+      navigate('/recuperar-email')
+    } else {
+      navigate('/recuperar-sms')
+    }
+  }
+
   return (
-    <div>
-      <button onClick={onVoltar}>Voltar</button>
-      <button onClick={onAvancarEmail}>Avançar Email</button>
-      <button onClick={onAvancarSMS}>Avançar SMS</button>
+    <div className={styler.container}>
+      <img src={logo} className={styler.logo} alt="logo" />
+      <h2 className={styler.titulo}>RECUPERAR SENHA</h2>
+      <div className={styler.caixa}>
+        <input
+          className={styler.input}
+          type="text"
+          placeholder="Digite seu Email/Número"
+          value={valor}
+          onChange={(e) => setValor(e.target.value)}
+        />
+        <button className={styler.botao} onClick={handleEnviar}>Enviar</button>
+      </div>
     </div>
   )
 }
-export default Recuperar_Form
+
+export default Recupera_Forms

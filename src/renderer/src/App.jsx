@@ -4,7 +4,9 @@ import Login from "./pages/Login";
 import TradutorSurdo from "./pages/TradutorSurdo";
 import TradutorOuvinte from "./pages/TradutorOuvinte";
 import Selecionar from "./pages/Selecionar";
-import RecuperarSenha from "./pages/RecuperarSenha"
+import RecuperarSenha from "./components/Recupera_Forms";
+import RecuperarEmail from "./components/Recuperar_Email";
+import RecuperarSMS from "./components/Recuperar_SMS";
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <Route path="/ouvinte" element={<TradutorOuvinte />} />
         <Route path="/selecionar" element={<Selecionar />} />
         <Route path="/recuperar" element={<RecuperarSenha />} />
+        <Route path="/recuperar-email" element={<RecuperarEmail />} />
+        <Route path="/recuperar-sms" element={<RecuperarSMS />} />
       </Routes>
     </HashRouter>
   );
