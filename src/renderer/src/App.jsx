@@ -7,6 +7,7 @@ import Selecionar from "./pages/Selecionar";
 import RecuperarSenha from "./components/Recupera_Forms";
 import RecuperarEmail from "./components/Recuperar_Email";
 import RecuperarSMS from "./components/Recuperar_SMS";
+import Configuracoes from "./pages/Configuracoes";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/recuperar" element={<RecuperarSenha />} />
         <Route path="/recuperar-email" element={<RecuperarEmail />} />
         <Route path="/recuperar-sms" element={<RecuperarSMS />} />
+        <Route path="/configuracoes" element={<Configuracoes />} />
       </Routes>
     </HashRouter>
   );

@@ -6,12 +6,12 @@ function Login() {
   const navigate = useNavigate()
 
   function handleEntrar() {
-    navigate('/surdo')
+    navigate('/selecionar')
   }
 
- function handleEsqueci() {
-  navigate('/recuperar')
-}
+  function handleEsqueci() {
+    navigate('/recuperar')
+  }
 
   return (
     <div className={styles.container}>
@@ -26,6 +26,7 @@ function Login() {
       </div>
     </div>
   )
+
 }
 
 export default Login

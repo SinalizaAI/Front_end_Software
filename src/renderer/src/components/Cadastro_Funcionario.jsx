@@ -1,4 +1,4 @@
-import styles from '../css/cadastro_funcionario.module.css'
+import styles from '../css/Cadastro_Funcionario.module.css'
 
 function Cadastro_Funcionario({ onAvancar, onVoltar }) {
   return (
