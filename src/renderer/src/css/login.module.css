@@ -11,13 +11,13 @@
 }
 
 .logo {
-  width: 100px;
-  height: 100px;
+  width: 337.77px;
+  height: 290px;
   object-fit: contain;
 }
 
 .titulo {
-  font-size: 28px;
+  font-size: 40px;
   font-family: 'Inter', sans-serif;
   font-weight: bold;
   color: #000;
@@ -26,21 +26,25 @@
 
 .caixa {
   background-color: #023759;
-  border-radius: 12px;
-  padding: 30px 40px;
+  border-radius: 10px;
+  padding: 40px 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
-  width: 380px;
+  justify-content: center;
+  gap: 18px;
+  width: 937px;
+  max-width: 90vw;
+  height: 393px;
+  box-sizing: border-box;
 }
 
 .input {
   width: 100%;
-  padding: 10px 14px;
+  padding: 14px 18px;
   border-radius: 6px;
   border: none;
-  font-size: 14px;
+  font-size: 16px;
   font-family: 'Inter', sans-serif;
   outline: none;
   background-color: #fff;
@@ -48,7 +52,7 @@
 
 .esqueci {
   color: #ffffff;
-  font-size: 13px;
+  font-size: 14px;
   font-family: 'Inter', sans-serif;
   align-self: flex-end;
   cursor: pointer;
@@ -56,16 +60,19 @@
 }
 
 .botao {
+ 
   background-color: #f5b942;
   border: none;
   border-radius: 25px;
-  padding: 10px 50px;
-  font-size: 16px;
+  padding: 12px 0;
+  width: 35%;
+  font-size: 18px;
   font-family: 'Inter', sans-serif;
   font-weight: bold;
   cursor: pointer;
   margin-top: 4px;
 }
+
 
 .botao:hover {
   background-color: #e0a830;

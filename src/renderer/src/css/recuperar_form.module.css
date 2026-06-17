@@ -11,13 +11,13 @@
 }
 
 .logo {
-  width: 100px;
-  height: 100px;
+  width: 337.77px;
+  height: 290px;
   object-fit: contain;
 }
 
 .titulo {
-  font-size: 26px;
+  font-size: 40px;
   font-family: 'Inter', sans-serif;
   font-weight: bold;
   color: #000;
@@ -26,31 +26,40 @@
 
 .caixa {
   background-color: #023759;
-  border-radius: 12px;
-  padding: 30px 40px;
+  border-radius: 10px;
+  padding: 40px 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
-  width: 380px;
+  justify-content: center;
+  gap: 28px;
+  width: 937px;
+  max-width: 90vw;
+  height: 393px;
+  box-sizing: border-box;
 }
 
 .input {
-  width: 100%;
-  padding: 10px 14px;
-  border-radius: 6px;
+  width: 782px;
+  max-width: 100%;
+  height: 80px;
+  padding: 0 18px;
+  border-radius: 10px;
   border: none;
-  font-size: 14px;
+  font-size: 16px;
   outline: none;
   background-color: #fff;
+  box-sizing: border-box;
 }
 
 .botao {
   background-color: #f5b942;
   border: none;
-  border-radius: 25px;
-  padding: 10px 50px;
-  font-size: 16px;
+  border-radius: 30px;
+  padding: 0;
+  width: 265px;
+  height: 66px;
+  font-size: 18px;
   font-weight: bold;
   cursor: pointer;
 }
@@ -61,20 +70,18 @@
 
 .confirmacao_titulo {
   color: #4cff72;
-  font-size: 20px;
+  font-size: 28px;
   font-weight: bold;
 }
 
 .confirmacao_texto {
   color: #f5b942;
-  font-size: 15px;
+  font-size: 18px;
   text-align: center;
 }
 
 .voltar {
   color: #ffffff;
-  font-size: 14px;
+  font-size: 16px;
   cursor: pointer;
-  text-decoration: underline;
-  margin-top: 4px;
-}
+   }
