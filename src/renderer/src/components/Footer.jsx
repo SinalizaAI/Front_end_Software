@@ -6,7 +6,7 @@ function Footer() {
 
   return (
     <div className={styler.container}>
-      <a className={styler.configuracoes} onClick={() => navigate('/configuracoes')}>
+      <a className={styler.configuracoes} onClick={() => navigate('/configuracoes/login')}>
         <div className={styler.confi}></div>
         CONFIGURAÇÕES
       </a>
