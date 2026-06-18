@@ -1,18 +1,22 @@
-.container{
-    border: 2px solid firebrick;
-    width: 100%;
-    height: 100%;
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 
-.img_logo{
-    margin-left: 90%;
-    border: 1px solid palevioletred;
-    width: 10%;
-    height: auto;
+.card {
+  width: 100%;
+  height: 100%;
+}
+
+.img_logo {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  width: 10%;
 }
 
 .logo {
   width: 100%;
   height: auto;
 }
-

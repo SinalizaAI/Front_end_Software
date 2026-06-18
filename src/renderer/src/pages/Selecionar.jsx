@@ -12,10 +12,11 @@ function Selecionar() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.img_logo}>
-        <img src={logo} className={styles.logo} alt="logo" />
-      </div>
       <div className={styles.card}>
+        <div className={styles.img_logo}>
+          <img src={logo} className={styles.logo} alt="logo" />
+        </div>
+
         {tela === 'chave' && <Chave onAvancar={() => setTela('funcionario')} />}
         {tela === 'funcionario' && <Funcionario onAvancar={() => setTela('cadastro')} />}
         {tela === 'cadastro' && <Cadastro_Funcionario onVoltar={() => setTela('funcionario')} />}
