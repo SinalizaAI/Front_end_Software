@@ -2,7 +2,7 @@ import styler from '../css/Footer.module.css'
 import { useNavigate } from 'react-router-dom'
 
 function Footer() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
     <div className={styler.container}>
@@ -11,7 +11,7 @@ function Footer() {
         CONFIGURAÇÕES
       </a>
       <div className={styler.status}>
-        Status: 
+        Status:
         <input className={styler.on_off} value="Ativo" readOnly />
       </div>
       <a className={styler.ajuda} onClick={() => navigate('/ajuda')}>
@@ -19,7 +19,8 @@ function Footer() {
         AJUDA
       </a>
     </div>
-  )
-}
+  );
+};
 
 export default Footer
+
