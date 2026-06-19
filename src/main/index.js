@@ -1,10 +1,51 @@
 import { app, BrowserWindow, ipcMain } from 'electron'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
+import WebSocket from 'ws'
 
 let telaInicial = null
 let janelaSurdo = null
 let janelaOuvinte = null
+let wsPython = null
+
+function conectarPython() {
+  wsPython = new WebSocket('ws://localhost:8765')
+
+  wsPython.on('open', () => {
+    console.log('Conectado ao Python via WebSocket')
+  })
+
+  wsPython.on('message', (data) => {
+    try {
+      const mensagem = JSON.parse(data.toString())
+
+      if (mensagem.tipo === 'frase_reconhecida') {
+        if (janelaSurdo) janelaSurdo.webContents.send('frase-reconhecida', mensagem.dado)
+        if (janelaOuvinte) janelaOuvinte.webContents.send('frase-reconhecida', mensagem.dado)
+      }
+
+      if (mensagem.tipo === 'voz_atendente') {
+        if (janelaSurdo) janelaSurdo.webContents.send('voz-atendente', mensagem.dado)
+      }
+
+      if (mensagem.tipo === 'status_gravacao') {
+        if (janelaOuvinte) janelaOuvinte.webContents.send('status-gravacao', mensagem.dado)
+      }
+
+    } catch (e) {
+      console.log('Erro ao processar mensagem do Python:', e.getMessage())
+    }
+  })
+
+  wsPython.on('close', () => {
+    console.log('Conexão com Python encerrada — tentando reconectar em 3s...')
+    setTimeout(conectarPython, 3000)
+  })
+
+  wsPython.on('error', (err) => {
+    console.log('Erro WebSocket:', err.message)
+  })
+}
 
 function createWindows() {
   telaInicial = new BrowserWindow({
@@ -18,7 +59,6 @@ function createWindows() {
       sandbox: false
     }
   })
-
   janelaSurdo = new BrowserWindow({
     width: 900,
     height: 670,
@@ -30,7 +70,6 @@ function createWindows() {
       sandbox: false
     }
   })
-
   janelaOuvinte = new BrowserWindow({
     width: 900,
     height: 670,
@@ -66,6 +105,7 @@ app.whenReady().then(() => {
   })
 
   createWindows()
+  conectarPython()
 
   app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) createWindows()
@@ -82,4 +122,16 @@ ipcMain.on('abrir-surdo', () => {
 
 ipcMain.on('abrir-ouvinte', () => {
   if (janelaOuvinte) janelaOuvinte.show()
+})
+
+ipcMain.on('iniciar-gravacao', () => {
+  if (wsPython && wsPython.readyState === WebSocket.OPEN) {
+    wsPython.send(JSON.stringify({ tipo: 'iniciar_gravacao' }))
+  }
+})
+
+ipcMain.on('parar-gravacao', () => {
+  if (wsPython && wsPython.readyState === WebSocket.OPEN) {
+    wsPython.send(JSON.stringify({ tipo: 'parar_gravacao' }))
+  }
 })
