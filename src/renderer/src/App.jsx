@@ -10,6 +10,7 @@ import RecuperarSMS from "./components/Recuperar_SMS";
 import Configuracoes from "./pages/Configuracoes";
 import ConfSemConta from "./components/Conf_SemConta";
 import ConfConta from "./components/Conf_Conta";
+import ConfSistema from "./components/Conf_Sistema";
 
 function App() {
   return (
@@ -26,6 +27,8 @@ function App() {
         <Route path="/configuracoes" element={<Configuracoes />} />
         <Route path="/configuracoes/login" element={<ConfSemConta />} />
         <Route path="/configuracoes/conta" element={<ConfConta />} />
+        <Route path="/configuracoes/sistema" element={<ConfSistema />} />
+        
       </Routes>
     </HashRouter>
   );

@@ -1,0 +1,184 @@
+.page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  margin: 0;
+  padding: 40px 20px;
+  background-color: #ffffff;
+  font-family: "Segoe UI", Arial, sans-serif;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.logo {
+  position: absolute;
+  top: 10px;
+  right: 50px;
+  width: 160px;
+  height: 160px;
+  max-width: 160px;
+  max-height: 160px;
+  object-fit: contain;
+  flex: none;
+}
+
+.title {
+  height: auto;
+  font-size: 44px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #1a1a1a;
+  margin: 0 0 40px;
+  text-align: center;
+  width: 100%;
+  flex: none;
+}
+
+.panel {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  width: 100%;
+  max-width: 992px;
+  height: auto;
+  min-height: 516px;
+  background-color: #0f2a4a;
+  border-radius: 20px;
+  padding: 36px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  gap: 36px;
+  flex: none;
+}
+
+.sidebar {
+  width: 220px;
+  height: auto;
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.sidebarTop {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 27px;
+  flex: none;
+}
+
+.sidebarItem {
+  height: 22px;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 25px;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  flex: none;
+  line-height: 22px;
+}
+
+.sidebarItemActive {
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.backButton {
+  height: 41px;
+  background-color: #f2a93b;
+  color: #1a1a1a;
+  border: none;
+  border-radius: 30px;
+  padding: 0 24px;
+  font-size: 28px;
+  font-weight: 700;
+  cursor: pointer;
+  width: 225px;
+  line-height: 41px;
+  flex: none;
+}
+
+.backButton:hover {
+  background-color: #e0972a;
+}
+
+.content {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: auto;
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 36px 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.sectionBlock {
+  height: auto;
+  flex: none;
+}
+
+.sectionTitle {
+  height: auto;
+  font-size: 30px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 6px;
+  flex: none;
+  line-height: 1.5;
+  letter-spacing: 1;
+}
+
+.dataList {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 0;
+  flex: none;
+}
+
+.dataRow {
+  height: auto;
+  font-size: 23px;
+  color: #1a1a1a;
+  margin: 0;
+  flex: none;
+}
+
+.dataLabel {
+  font-weight: 700;
+}
+
+.logoutButton {
+  height: 48px;
+  align-self: center;
+  background-color: #f2a93b;
+  color: #1a1a1a;
+  border: none;
+  border-radius: 28px;
+  padding: 0 32px;
+  font-size: 19px;
+  font-weight: 700;
+  cursor: pointer;
+  line-height: 48px;
+  flex: none;
+}
+
+.logoutButton:hover {
+  background-color: #e0972a;
+}
