@@ -15,10 +15,9 @@ import SistemaInicio from './pages/SistemaInicio'
 import SistemaInativo from './pages/SistemaInativo'
 import SistemaPendente from './pages/SistemaPendente'
 import SistemaInativoChave from './pages/SistemaInativoChave'
-import { HashRouter, Routes, Route } from "react-router-dom";
-import ConfChave from "./components/Conf_Chave";
-
-
+import { HashRouter, Routes, Route } from 'react-router-dom'
+import ConfChave from './components/Conf_Chave'
+import ConfHistorico from './components/Conf_Historico'
 
 function App() {
   return (
@@ -42,8 +41,7 @@ function App() {
         <Route path="/pages/SistemaPendente" element={<SistemaPendente />} />
         <Route path="/pages/SistemaInativoChave" element={<SistemaInativoChave />} />
         <Route path="/configuracoes/chave" element={<ConfChave />} />
-       
-        
+        <Route path="/configuracoes/historico" element={<ConfHistorico />} />
       </Routes>
     </HashRouter>
   )
