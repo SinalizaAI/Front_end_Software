@@ -1,4 +1,3 @@
-import { HashRouter, Routes, Route } from 'react-router-dom'
 import TelaInicial from './pages/TelaInicial'
 import Login from './pages/Login'
 import TradutorSurdo from './pages/TradutorSurdo'
@@ -16,6 +15,10 @@ import SistemaInicio from './pages/SistemaInicio'
 import SistemaInativo from './pages/SistemaInativo'
 import SistemaPendente from './pages/SistemaPendente'
 import SistemaInativoChave from './pages/SistemaInativoChave'
+import { HashRouter, Routes, Route } from "react-router-dom";
+import ConfChave from "./components/Conf_Chave";
+
+
 
 function App() {
   return (
@@ -38,6 +41,9 @@ function App() {
         <Route path="/pages/SistemaInativo" element={<SistemaInativo />} />
         <Route path="/pages/SistemaPendente" element={<SistemaPendente />} />
         <Route path="/pages/SistemaInativoChave" element={<SistemaInativoChave />} />
+        <Route path="/configuracoes/chave" element={<ConfChave />} />
+       
+        
       </Routes>
     </HashRouter>
   )
