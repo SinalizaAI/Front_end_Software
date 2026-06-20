@@ -5,7 +5,7 @@ function Funcionario() {
   const navigate = useNavigate()
 
   function SistemaInicio() {
-    navigate('/pages/SistemaInicio')
+    navigate('../pages/SistemaInicio')
   }
   return (
     <div className={styles.container_funcionario}>

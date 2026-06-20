@@ -12,6 +12,7 @@ import ConfSemConta from './components/Conf_SemConta'
 import ConfConta from './components/Conf_Conta'
 import SistemaIniciando from './pages/SistemaIniciando'
 import ConfSistema from './components/Conf_Sistema'
+import SistemaInicio from './pages/SistemaInicio'
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/configuracoes/conta" element={<ConfConta />} />
         <Route path="/configuracoes/sistema" element={<ConfSistema />} />
         <Route path="/pages/SistemaIniciando" element={<SistemaIniciando />} />
+        <Route path="/pages/SistemaInicio" element={<SistemaInicio />} />
       </Routes>
     </HashRouter>
   )
