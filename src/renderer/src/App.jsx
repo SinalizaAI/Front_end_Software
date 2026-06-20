@@ -13,6 +13,9 @@ import ConfConta from './components/Conf_Conta'
 import SistemaIniciando from './pages/SistemaIniciando'
 import ConfSistema from './components/Conf_Sistema'
 import SistemaInicio from './pages/SistemaInicio'
+import SistemaInativo from './pages/SistemaInativo'
+import SistemaPendente from './pages/SistemaPendente'
+import SistemaInativoChave from './pages/SistemaInativoChave'
 
 function App() {
   return (
@@ -32,6 +35,9 @@ function App() {
         <Route path="/configuracoes/sistema" element={<ConfSistema />} />
         <Route path="/pages/SistemaIniciando" element={<SistemaIniciando />} />
         <Route path="/pages/SistemaInicio" element={<SistemaInicio />} />
+        <Route path="/pages/SistemaInativo" element={<SistemaInativo />} />
+        <Route path="/pages/SistemaPendente" element={<SistemaPendente />} />
+        <Route path="/pages/SistemaInativoChave" element={<SistemaInativoChave />} />
       </Routes>
     </HashRouter>
   )

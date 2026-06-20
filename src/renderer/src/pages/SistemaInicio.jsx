@@ -10,11 +10,23 @@ function SistemaInicio() {
     navigate('../pages/SistemaIniciando')
   }
 
+  function SistemaInativo() {
+    navigate('../pages/SistemaInativo')
+  }
+
+  function SistemaInativoChave() {
+    navigate('../pages/SistemaInativoChave')
+  }
+
+  function SistemaPendente() {
+    navigate('../pages/SistemaPendente')
+  }
+
   return (
     <section className={styles.sec}>
       <div className={styles.logo_container}>
         <div className={styles.logo}>
-          <img src={Logo} alt="" />
+          <img src={Logo} alt="Logo do SinalizaAI" />
           <button onClick={SistemaIniciando} className={styles.btn}>
             Iniciar
           </button>
