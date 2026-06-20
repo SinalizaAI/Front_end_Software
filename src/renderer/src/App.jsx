@@ -16,12 +16,13 @@ import SistemaInativo from './pages/SistemaInativo'
 import SistemaPendente from './pages/SistemaPendente'
 import SistemaInativoChave from './pages/SistemaInativoChave'
 import ConfHistorico from './components/Conf_Historico'
-import { HashRouter, Routes, Route } from "react-router-dom";
-import ConfChave from "./components/Conf_Chave";
+import { HashRouter, Routes, Route } from 'react-router-dom'
+import ConfChave from './components/Conf_Chave'
 import ConfAcessos from './components/Conf_Acesso'
 import ConfEncerrar from './components/Conf_Encerrar'
 
 
+import Ajuda from './pages/Ajuda'
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
       <Routes>
         <Route path="/" element={<TelaInicial />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/ajuda" element={<Ajuda />} />
         <Route path="/surdo" element={<TradutorSurdo />} />
         <Route path="/ouvinte" element={<TradutorOuvinte />} />
         <Route path="/selecionar" element={<Selecionar />} />
@@ -49,6 +51,7 @@ function App() {
         <Route path="/configuracoes/encerrar" element={<ConfEncerrar />} />
        
         
+        <Route path="/configuracoes/acessos" element={<ConfAcessos />} />
       </Routes>
     </HashRouter>
   )
