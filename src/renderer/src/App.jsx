@@ -19,6 +19,7 @@ import ConfHistorico from './components/Conf_Historico'
 import { HashRouter, Routes, Route } from "react-router-dom";
 import ConfChave from "./components/Conf_Chave";
 import ConfAcessos from './components/Conf_Acesso'
+import ConfEncerrar from './components/Conf_Encerrar'
 
 
 
@@ -45,7 +46,7 @@ function App() {
         <Route path="/pages/SistemaInativoChave" element={<SistemaInativoChave />} />
         <Route path="/configuracoes/chave" element={<ConfChave />} />
         <Route path="/configuracoes/historico" element={<ConfHistorico />} />
-        <Route path="/configuracoes/acessos" element={<ConfAcessos />} />
+        <Route path="/configuracoes/encerrar" element={<ConfEncerrar />} />
        
         
       </Routes>
