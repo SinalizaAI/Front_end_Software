@@ -1,5 +1,6 @@
 import styles from '../css/SistemaInicio.module.css'
-import Footer from '../components/Footer'
+import FooterAtivo from '../components/Footer'
+
 import Logo from '../assets/logo.png'
 import { useNavigate } from 'react-router-dom'
 
@@ -32,7 +33,7 @@ function SistemaInicio() {
           </button>
         </div>
       </div>
-      <Footer />
+      <FooterAtivo />
     </section>
   )
 }

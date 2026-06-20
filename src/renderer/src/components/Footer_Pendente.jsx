@@ -1,4 +1,4 @@
-import styler from '../css/Footer.module.css'
+import styler from '../css/Footer_Pendente.module.css'
 import { useNavigate } from 'react-router-dom'
 
 function Footer() {
@@ -12,7 +12,7 @@ function Footer() {
       </a>
       <div className={styler.status}>
         Status:
-        <input className={styler.on_off} value="Totem Ativo" readOnly />
+        <input className={styler.on_off} value="Totem Pendente" readOnly />
       </div>
       <a className={styler.ajuda} onClick={() => navigate('/ajuda')}>
         <div className={styler.img_ajuda}></div>
