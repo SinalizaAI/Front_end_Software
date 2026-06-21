@@ -42,9 +42,9 @@ function ConfHistorico() {
               </button>
             ))}
           </div>
-          <button className={styles.backButton} onClick={() => navigate(-1)}>
-            Voltar
-          </button>
+          <button className={styles.backButton} onClick={() => navigate('/pages/SistemaInicio')}>
+  Voltar
+</button>
         </div>
 
         <div className={styles.content}>

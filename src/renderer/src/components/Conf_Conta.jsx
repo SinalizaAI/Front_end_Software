@@ -12,7 +12,7 @@ const menuItems = [
   { label: "Encerrar", path: "/configuracoes/encerrar" },
 ];
 
-// TODO: substituir pelos dados reais vindos da API/contexto de autenticação
+//substituir pelos dados reais vindos da API/contexto de autenticação
 const dadosCadastrados = {
   nome: "Administrador",
   razaoSocial: "nome_empresa",
@@ -25,10 +25,10 @@ const dadosCadastrados = {
 function ConfConta() {
   const navigate = useNavigate();
 
-  function handleSairDaConta() {
-    // TODO: limpar sessão/autenticação quando existir
-    navigate("/configuracoes/login");
-  }
+ function handleSairDaConta() {
+  // TODO: limpar sessão/autenticação quando existir
+  navigate('/pages/SistemaInicio');
+}
 
   return (
     <div className={styles.page}>
@@ -50,9 +50,9 @@ function ConfConta() {
               </button>
             ))}
           </div>
-          <button className={styles.backButton} onClick={() => navigate(-1)}>
-            Voltar
-          </button>
+        <button className={styles.backButton} onClick={() => navigate('/pages/SistemaInicio')}>
+                    Voltar
+                   </button>
         </div>
 
         <div className={styles.content}>

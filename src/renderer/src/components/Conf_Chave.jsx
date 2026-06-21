@@ -13,7 +13,7 @@ const MENU_ITEMS = [
   { label: 'Encerrar', path: '/configuracoes/encerrar' }
 ]
 
-// TODO: substituir pelos dados reais vindos da API
+// substituir pelos dados reais vindos da API
 const DADOS_CHAVE = {
   plano: 'Software',
   informacoesPlano: '*Informações do plano*'
@@ -43,9 +43,9 @@ function ConfChave() {
               </button>
             ))}
           </div>
-          <button className={styles.backButton} onClick={() => navigate(-1)}>
-            Voltar
-          </button>
+          <button className={styles.backButton} onClick={() => navigate('/pages/SistemaInicio')}>
+  Voltar
+</button>
         </div>
 
         <div className={styles.content}>

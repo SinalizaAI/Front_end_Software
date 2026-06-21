@@ -12,7 +12,7 @@ const MENU_ITEMS = [
   { label: "Encerrar",   path: "/configuracoes/encerrar" },
 ]
 
-// TODO: substituir pelos dados reais vindos da API
+// substituir pelos dados reais vindos da API
 const USUARIOS = [
   { id: 1, nome: "Administrador" },
   { id: 2, nome: "Atendente 01" },
@@ -42,9 +42,9 @@ function ConfAcessos() {
               </button>
             ))}
           </div>
-          <button className={styles.backButton} onClick={() => navigate(-1)}>
-            Voltar
-          </button>
+         <button className={styles.backButton} onClick={() => navigate('/pages/SistemaInicio')}>
+  Voltar
+</button>
         </div>
 
         {/* Conteúdo */}

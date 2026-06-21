@@ -1,50 +1,39 @@
-/* ===================================================
-   CENTRO DA TELA
-   Centraliza a pergunta e o botão "Sim", tanto na
-   horizontal quanto na vertical, dentro do painel branco.
-   height: 100% (em vez de flex: 1) garante que essa div
-   ocupe a altura toda do .content de forma previsível.
-   =================================================== */
 .centro {
   width: 100%;
-  height: 350px;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  padding-top: 130px;
+  justify-content: center;
+  padding-top: 0;
   gap: 16px;
   box-sizing: border-box;
 }
 
-/* ===================================================
-   PERGUNTA "Encerrar atendimento?"
-   =================================================== */
 .pergunta {
   font-size: 24px;
   color: #1a1a1a;
   margin: 0;
 }
 
-/* ===================================================
-   BOTÃO "Sim"
-   width/height fixos pra não ser esticado pelo
-   "* { height: 100% }" global do projeto.
-   =================================================== */
 .botaoSim {
-  width: 120px !important;
-  height: 60px !important;
+  width: 130px;
+  height: 44px;
   background-color: #f2a93b;
   color: #1a1a1a;
   border: none;
-  border-radius: 20px;
+  border-radius: 40px;
   padding: 0;
   font-size: 25px;
-  font-weight: 700;
+  font-weight: 500;
   cursor: pointer;
-  
 }
 
 .botaoSim:hover {
   background-color: #e0972a;
+}
+
+.contentEncerrar {
+  justify-content: center !important;
+  align-items: center !important;
 }

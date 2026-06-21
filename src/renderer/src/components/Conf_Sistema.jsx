@@ -12,7 +12,7 @@ const menuItems = [
   { label: "Encerrar", path: "/configuracoes/encerrar" },
 ];
 
-// TODO: substituir pelos dados reais vindos da API/contexto do sistema
+// substituir pelos dados reais vindos da API/contexto do sistema
 const dadosSistema = {
   brilhoAutomatico: "ativado",
   volume: "80",
@@ -44,9 +44,9 @@ function ConfSistema() {
               </button>
             ))}
           </div>
-          <button className={styles.backButton} onClick={() => navigate(-1)}>
-            Voltar
-          </button>
+         <button className={styles.backButton} onClick={() => navigate('/pages/SistemaInicio')}>
+  Voltar
+</button>
         </div>
 
         <div className={styles.content}>

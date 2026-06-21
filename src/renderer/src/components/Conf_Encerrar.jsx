@@ -44,13 +44,13 @@ function ConfEncerrar() {
               </button>
             ))}
           </div>
-          <button className={styles.backButton} onClick={() => navigate(-1)}>
-            Voltar
-          </button>
+          <button className={styles.backButton} onClick={() => navigate('/pages/SistemaInicio')}>
+  Voltar
+</button>
         </div>
 
         {/* ===== CONTEÚDO: pergunta de confirmação centralizada ===== */}
-        <div className={styles.content}>
+        <div className={`${styles.content} ${encerrarStyles.contentEncerrar}`}>
           <div className={encerrarStyles.centro}>
             <p className={encerrarStyles.pergunta}>Encerrar atendimento?</p>
             <button className={encerrarStyles.botaoSim} onClick={handleConfirmarEncerramento}>
