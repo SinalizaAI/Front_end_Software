@@ -1,29 +1,26 @@
-import { useNavigate } from "react-router-dom";
-import logo from "../assets/logo.png";
-import styles from "../css/Conf_Conta.module.css";
+import { useNavigate } from "react-router-dom"
+import logo from "../assets/logo.png"
+import styles from "../css/Conf_Acesso.module.css"
 
 const MENU_ITEMS = [
-  { label: "Conta", path: "/configuracoes/conta" },
-  { label: "Sistema", path: "/configuracoes/sistema" },
-  { label: "Chave", path: "/configuracoes/chave" },
-  { label: "Acessos", path: "/configuracoes/acessos" },
-  { label: "Histórico", path: "/configuracoes/historico" },
+  { label: "Conta",      path: "/configuracoes/conta" },
+  { label: "Sistema",    path: "/configuracoes/sistema" },
+  { label: "Chave",      path: "/configuracoes/chave" },
+  { label: "Acessos",    path: "/configuracoes/acessos" },
+  { label: "Histórico",  path: "/configuracoes/historico" },
   { label: "Permissões", path: "/configuracoes/permissoes" },
-  { label: "Encerrar", path: "/configuracoes/encerrar" },
-];
+  { label: "Encerrar",   path: "/configuracoes/encerrar" },
+]
 
 // TODO: substituir pelos dados reais vindos da API
-const DADOS_ACESSOS = {
-  totalUsuarios: 3,
-  usuarios: [
-    { nome: "Administrador" },
-    { nome: "Atendente 01" },
-    { nome: "Atendente 02" },
-  ],
-};
+const USUARIOS = [
+  { id: 1, nome: "Administrador" },
+  { id: 2, nome: "Atendente 01" },
+  { id: 3, nome: "Atendente 02" },
+]
 
 function ConfAcessos() {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   return (
     <div className={styles.page}>
@@ -31,16 +28,15 @@ function ConfAcessos() {
       <h1 className={styles.title}>CONFIGURAÇÕES</h1>
 
       <div className={styles.panel}>
+
+        {/* Sidebar */}
         <div className={styles.sidebar}>
           <div className={styles.sidebarTop}>
             {MENU_ITEMS.map((item) => (
               <button
                 key={item.label}
-                className={`${styles.sidebarItem} ${
-                  item.label === "Acessos" ? styles.sidebarItemActive : ""
-                }`}
+                className={`${styles.sidebarItem} ${item.label === "Acessos" ? styles.sidebarItemActive : ""}`}
                 onClick={() => navigate(item.path)}
-                aria-current={item.label === "Acessos" ? "page" : undefined}
               >
                 {item.label}
               </button>
@@ -51,24 +47,26 @@ function ConfAcessos() {
           </button>
         </div>
 
+        {/* Conteúdo */}
         <div className={styles.content}>
-          <p className={styles.dataRow}>
+          <p className={styles.sectionTitle}>
             <span className={styles.dataLabel}>Usuários cadastrados: </span>
-            {DADOS_ACESSOS.totalUsuarios}
+            {USUARIOS.length}
           </p>
 
-          <div className={styles.dataList}>
-            {DADOS_ACESSOS.usuarios.map((usuario, index) => (
-              <p key={index} className={styles.dataRow}>
+          <div className={styles.userList}>
+            {USUARIOS.map((usuario) => (
+              <p key={usuario.id} className={styles.userRow}>
                 <span className={styles.dataLabel}>Nome: </span>
                 {usuario.nome}
               </p>
             ))}
           </div>
         </div>
+
       </div>
     </div>
-  );
+  )
 }
 
-export default ConfAcessos;
+export default ConfAcessos

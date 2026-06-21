@@ -1,8 +1,9 @@
 import { useNavigate } from 'react-router-dom'
 import logo from '../assets/logo.png'
 import styles from '../css/Conf_Conta.module.css'
-import chaveStyles from '../css/Conf_Chave.module.css'
+import encerrarStyles from '../css/Conf_Encerrar.module.css'
 
+// ===== MENU LATERAL =====
 const MENU_ITEMS = [
   { label: 'Conta', path: '/configuracoes/conta' },
   { label: 'Sistema', path: '/configuracoes/sistema' },
@@ -13,14 +14,14 @@ const MENU_ITEMS = [
   { label: 'Encerrar', path: '/configuracoes/encerrar' }
 ]
 
-// TODO: substituir pelos dados reais vindos da API
-const DADOS_CHAVE = {
-  plano: 'Encerrar',
-  informacoesPlano: '*Informações do plano*'
-}
-
 function ConfEncerrar() {
   const navigate = useNavigate()
+
+  // Função chamada quando o usuário clica em "Sim".
+  // Encerra o atendimento e volta pra Tela Inicial.
+  function handleConfirmarEncerramento() {
+    navigate('/')
+  }
 
   return (
     <div className={styles.page}>
@@ -48,17 +49,13 @@ function ConfEncerrar() {
           </button>
         </div>
 
+        {/* ===== CONTEÚDO: pergunta de confirmação centralizada ===== */}
         <div className={styles.content}>
-          <div style={{ display: 'flex', flexDirection: 'column', flex: 1, overflow: 'hidden' }}>
-            <p className={styles.dataRow}>
-              <span className={styles.dataLabel}>Plano: </span>
-              {DADOS_CHAVE.plano}
-            </p>
-
-            <div className={chaveStyles.infoBox}>
-              <p className={chaveStyles.infoText}>{DADOS_CHAVE.informacoesPlano}</p>
-              <p className={chaveStyles.contato}>{DADOS_CHAVE.contato}</p>
-            </div>
+          <div className={encerrarStyles.centro}>
+            <p className={encerrarStyles.pergunta}>Encerrar atendimento?</p>
+            <button className={encerrarStyles.botaoSim} onClick={handleConfirmarEncerramento}>
+              Sim
+            </button>
           </div>
         </div>
       </div>

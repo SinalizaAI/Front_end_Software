@@ -20,6 +20,7 @@ import { HashRouter, Routes, Route } from 'react-router-dom'
 import ConfChave from './components/Conf_Chave'
 import ConfAcessos from './components/Conf_Acesso'
 import ConfEncerrar from './components/Conf_Encerrar'
+import ConfPermissoes from './components/Conf_Permissoes'
 
 
 import Ajuda from './pages/Ajuda'
@@ -49,6 +50,8 @@ function App() {
         <Route path="/configuracoes/chave" element={<ConfChave />} />
         <Route path="/configuracoes/historico" element={<ConfHistorico />} />
         <Route path="/configuracoes/encerrar" element={<ConfEncerrar />} />
+        <Route path="/configuracoes/permissoes" element={<ConfPermissoes />} />
+        
        
         
         <Route path="/configuracoes/acessos" element={<ConfAcessos />} />

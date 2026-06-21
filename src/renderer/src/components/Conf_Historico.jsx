@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import logo from '../assets/logo.png'
 import styles from '../css/Conf_Conta.module.css'
-import chaveStyles from '../css/Conf_Chave.module.css'
+import historicoStyles from '../css/Conf_Historico.module.css'
 
 const MENU_ITEMS = [
   { label: 'Conta', path: '/configuracoes/conta' },
@@ -13,11 +13,10 @@ const MENU_ITEMS = [
   { label: 'Encerrar', path: '/configuracoes/encerrar' }
 ]
 
-// TODO: substituir pelos dados reais vindos da API
-const DADOS_CHAVE = {
-  plano: 'Historico',
-  informacoesPlano: '*Informações do plano*'
-}
+// substituir pelos dados reais vindos da API
+const DADOS_HISTORICO = [
+  // { dia: '20/06/2026', inicio: '08:00', termino: '12:00' },
+]
 
 function ConfHistorico() {
   const navigate = useNavigate()
@@ -50,14 +49,24 @@ function ConfHistorico() {
 
         <div className={styles.content}>
           <div style={{ display: 'flex', flexDirection: 'column', flex: 1, overflow: 'hidden' }}>
-            <p className={styles.dataRow}>
-              <span className={styles.dataLabel}>Plano: </span>
-              {DADOS_CHAVE.plano}
+            <p className={styles.dataRow} style={{ textAlign: 'center' }}>
+              Histórico
             </p>
 
-            <div className={chaveStyles.infoBox}>
-              <p className={chaveStyles.infoText}>{DADOS_CHAVE.informacoesPlano}</p>
-              <p className={chaveStyles.contato}>{DADOS_CHAVE.contato}</p>
+            <div className={historicoStyles.infoBox}>
+              <div className={historicoStyles.cabecalho}>
+                <span className={historicoStyles.colDia}>Dia</span>
+                <span className={historicoStyles.colInicio}>Horário inicio</span>
+                <span className={historicoStyles.colTermino}>Horário término</span>
+              </div>
+
+              {DADOS_HISTORICO.map((registro, index) => (
+                <div key={index} className={historicoStyles.linha}>
+                  <span className={historicoStyles.colDia}>{registro.dia}</span>
+                  <span className={historicoStyles.colInicio}>{registro.inicio}</span>
+                  <span className={historicoStyles.colTermino}>{registro.termino}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
