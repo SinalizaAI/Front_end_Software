@@ -1,4 +1,4 @@
-import styles from '../css/Ajuda.module.css'
+import styles from '../css/ComoFuncionaPO.module.css'
 import Logo from '../assets/logo.png'
 import { useNavigate } from 'react-router-dom'
 
