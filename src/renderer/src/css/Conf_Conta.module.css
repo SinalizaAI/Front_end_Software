@@ -47,7 +47,7 @@
   max-width: 992px;
   height: auto;
   min-height: 516px;
-  background-color: #0f2a4a;
+  background-color: #023759;
   border-radius: 20px;
   padding: 36px;
   margin: 0 auto;
@@ -175,3 +175,6 @@
 .logoutButton:hover {
   background-color: #e0972a;
 }
+
+
+
