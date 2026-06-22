@@ -16,7 +16,7 @@ function Chave({ onAvancar }) {
           <p>• Chave 5</p>
         </div>
 
-        <button onClick={onAvancar}>Selecionar</button>
+        <button className={styles.botao} onClick={onAvancar}>Selecionar</button>
       </div>
     </div>
   )

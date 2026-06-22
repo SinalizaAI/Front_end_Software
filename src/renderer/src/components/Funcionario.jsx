@@ -18,8 +18,8 @@ function Funcionario() {
           <p>• Proprietário</p>
         </div>
         <div className={styles.botoes}>
-          <button onClick={SistemaInicio}>Selecionar</button>
-          <button onClick={SistemaInicio}>Cadastrar</button>
+          <button className={styles.btn} onClick={SistemaInicio}>Selecionar</button>
+          <button className={styles.btn} onClick={SistemaInicio}>Cadastrar</button>
         </div>
       </div>
     </div>

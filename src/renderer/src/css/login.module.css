@@ -42,12 +42,17 @@
 .input {
   width: 100%;
   padding: 14px 18px;
-  border-radius: 6px;
-  border: none;
-  font-size: 16px;
+  font-size: 25px;
   font-family: 'Inter', sans-serif;
+  border: 0.5px solid #cfd8e3;
+  border-radius: 10px;
+  background-color: #eaf2fb;
+  color: #1a1a1a;
   outline: none;
-  background-color: #fff;
+}
+
+.input:focus {
+  border-color: var(--amarelo);
 }
 
 .esqueci {
@@ -59,21 +64,23 @@
   text-decoration: underline;
 }
 
+.esqueci:hover {
+  color: var(--amarelo);
+}
+
 .botao {
- 
-  background-color: #f5b942;
-  border: none;
-  border-radius: 25px;
-  padding: 12px 0;
-  width: 35%;
+  width: 265px;
+  height: 66px;
+  background-color: var(--amarelo);
   font-size: 30px;
   font-family: 'Inter', sans-serif;
   font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 0;
   cursor: pointer;
-  margin-top: 4px;
 }
 
-
 .botao:hover {
-  background-color: #e0a830;
+  background-color: var(--branco_puro);
 }

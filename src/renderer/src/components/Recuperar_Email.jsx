@@ -1,4 +1,4 @@
-import styles from '../css/Recuperar_form.module.css'
+import styles from '../css/Recuperar_email.module.css'
 import { useNavigate } from 'react-router-dom'
 import logo from '../assets/logo.png'
 
