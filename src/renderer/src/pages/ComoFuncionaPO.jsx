@@ -1,8 +1,8 @@
-import styles from '../css/ajuda.module.css'
+import styles from '../css/Ajuda.module.css'
 import Logo from '../assets/logo.png'
 import { useNavigate } from 'react-router-dom'
 
-function Ajuda() {
+function ComoFuncionaPO() {
   const navigate = useNavigate()
 
   return (
@@ -11,7 +11,7 @@ function Ajuda() {
         <img src={Logo} alt="Logo do SinalizaAI" />
       </div>
 
-      <h1>Ajuda</h1>
+      <h1>Como Funciona PO</h1>
 
       <div className={styles.container}>
         <div className={styles.links_container}>
@@ -49,4 +49,4 @@ function Ajuda() {
   )
 }
 
-export default Ajuda
+export default ComoFuncionaPO

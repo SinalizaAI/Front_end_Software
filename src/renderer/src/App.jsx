@@ -21,9 +21,9 @@ import ConfChave from './components/Conf_Chave'
 import ConfAcessos from './components/Conf_Acesso'
 import ConfEncerrar from './components/Conf_Encerrar'
 import ConfPermissoes from './components/Conf_Permissoes'
-
-
+import ComoFuncionaPO from './pages/ComoFuncionaPO'
 import Ajuda from './pages/Ajuda'
+import ComoFuncionaPS from './pages/ComoFuncionaPS'
 
 function App() {
   return (
@@ -51,10 +51,9 @@ function App() {
         <Route path="/configuracoes/historico" element={<ConfHistorico />} />
         <Route path="/configuracoes/encerrar" element={<ConfEncerrar />} />
         <Route path="/configuracoes/permissoes" element={<ConfPermissoes />} />
-        
-       
-        
         <Route path="/configuracoes/acessos" element={<ConfAcessos />} />
+        <Route path="/comoFuncionaPS" element={<ComoFuncionaPS />} />
+        <Route path="/comoFuncionaPO" element={<ComoFuncionaPO />} />
       </Routes>
     </HashRouter>
   )
