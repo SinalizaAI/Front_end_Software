@@ -1,4 +1,4 @@
-import styles from '../css/funcionario.module.css'
+import styles from '../css/Funcionario.module.css'
 import { useNavigate } from 'react-router-dom'
 
 function Funcionario() {
@@ -19,7 +19,7 @@ function Funcionario() {
         </div>
         <div className={styles.botoes}>
           <button onClick={SistemaInicio}>Selecionar</button>
-          {/* <button onClick={onAvancar}>Cadastrar</button> */}
+          <button onClick={SistemaInicio}>Cadastrar</button>
         </div>
       </div>
     </div>

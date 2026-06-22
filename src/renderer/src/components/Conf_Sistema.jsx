@@ -1,28 +1,28 @@
-import { useNavigate } from "react-router-dom";
-import logo from "../assets/logo.png";
-import styles from "../css/Conf_Sistema.module.css";
+import { useNavigate } from 'react-router-dom'
+import logo from '../assets/logo.png'
+import styles from '../css/Conf_Sistema.module.css'
 
 const menuItems = [
-  { label: "Conta", path: "/configuracoes/conta" },
-  { label: "Sistema", path: "/configuracoes/sistema" },
-  { label: "Chave", path: "/configuracoes/chave" },
-  { label: "Acessos", path: "/configuracoes/acessos" },
-  { label: "Histórico", path: "/configuracoes/historico" },
-  { label: "Permissões", path: "/configuracoes/permissoes" },
-  { label: "Encerrar", path: "/configuracoes/encerrar" },
-];
+  { label: 'Conta', path: '/configuracoes/conta' },
+  { label: 'Sistema', path: '/configuracoes/sistema' },
+  { label: 'Chave', path: '/configuracoes/chave' },
+  { label: 'Acessos', path: '/configuracoes/acessos' },
+  { label: 'Histórico', path: '/configuracoes/historico' },
+  { label: 'Permissões', path: '/configuracoes/permissoes' },
+  { label: 'Encerrar', path: '/configuracoes/encerrar' }
+]
 
 // substituir pelos dados reais vindos da API/contexto do sistema
 const dadosSistema = {
-  brilhoAutomatico: "ativado",
-  volume: "80",
-  wifi: "ativado",
-  status: "conectado",
-  intensidadeSinal: "excelente",
-};
+  brilhoAutomatico: 'ativado',
+  volume: '80',
+  wifi: 'ativado',
+  status: 'conectado',
+  intensidadeSinal: 'excelente'
+}
 
 function ConfSistema() {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   return (
     <div className={styles.page}>
@@ -36,7 +36,7 @@ function ConfSistema() {
               <button
                 key={item.label}
                 className={`${styles.sidebarItem} ${
-                  item.label === "Sistema" ? styles.sidebarItemActive : ""
+                  item.label === 'Sistema' ? styles.sidebarItemActive : ''
                 }`}
                 onClick={() => navigate(item.path)}
               >
@@ -44,9 +44,9 @@ function ConfSistema() {
               </button>
             ))}
           </div>
-         <button className={styles.backButton} onClick={() => navigate('/pages/SistemaInicio')}>
-  Voltar
-</button>
+          <button className={styles.backButton} onClick={() => navigate('/pages/SistemaInicio')}>
+            Voltar
+          </button>
         </div>
 
         <div className={styles.content}>
@@ -90,7 +90,7 @@ function ConfSistema() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default ConfSistema;
+export default ConfSistema

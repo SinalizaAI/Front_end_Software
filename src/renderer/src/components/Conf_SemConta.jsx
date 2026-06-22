@@ -1,22 +1,22 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import logo from "../assets/logo.png";
-import styles from "../css/Conf_SemConta.module.css";
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import logo from '../assets/logo.png'
+import styles from '../css/Conf_SemConta.module.css'
 
 function ConfSemConta() {
-  const navigate = useNavigate();
-  const [idUsuario, setIdUsuario] = useState("");
-  const [senha, setSenha] = useState("");
-  const [erro, setErro] = useState("");
+  const navigate = useNavigate()
+  const [idUsuario, setIdUsuario] = useState('')
+  const [senha, setSenha] = useState('')
+  const [erro, setErro] = useState('')
 
   function handleEntrar() {
     if (!idUsuario || !senha) {
-      setErro("Preencha o ID de usuário e a senha.");
-      return;
+      setErro('Preencha o ID de usuário e a senha.')
+      return
     }
-    setErro("");
+    setErro('')
     // TODO: validar credenciais quando a autenticação real estiver disponível
-    navigate("/configuracoes/conta");
+    navigate('/configuracoes/conta')
   }
 
   return (
@@ -61,7 +61,7 @@ function ConfSemConta() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default ConfSemConta;
+export default ConfSemConta
