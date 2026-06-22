@@ -1,73 +1,72 @@
 @import url(../global.css);
 
 .container {
-    /* border: 2px solid sandybrown; */
-    height: 10%;
-    width: 95%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
-    padding: 0 16px;
-    font-size: 20px;
-    font-family: 'Inter', sans-serif;
+  /* border: 2px solid sandybrown; */
+  height: 10%;
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  font-size: 20px;
+  font-family: 'Inter', sans-serif;
 }
 
 .configuracoes {
-    align-items: center;
-    gap: 10px;
-    /* border: 1px solid darkblue; */
-    height: 75%;
-    width: 18%;
-    display: flex;
+  align-items: center;
+  gap: 10px;
+  /* border: 1px solid darkblue; */
+  height: 75%;
+  width: 18%;
+  display: flex;
 }
 
 .confi {
-    background-image: url('../assets/configuracao.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 50px;
-    height: 50px;
+  background-image: url('../assets/configuracao.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 50px;
+  height: 50px;
 }
 
 .ajuda {
-    align-items: center;
-    gap: 10px;
-    /* border: 1px solid darkblue; */
-    height: 75%;
-    width: 10%;
-    display: flex;
+  align-items: center;
+  gap: 10px;
+  /* border: 1px solid darkblue; */
+  height: 75%;
+  width: 10%;
+  display: flex;
 }
 
 .img_ajuda {
-    background-image: url('../assets/ajuda.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 50px;
-    height: 50px;
+  background-image: url('../assets/ajuda.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 50px;
+  height: 50px;
 }
 
 .status {
-    align-items: center;
-    gap: 5px;
-    /* border: 1px solid darkblue; */
-    height: 75%;
-    width: 23%;
-    font-size: 32px;
-    display: flex;
-    padding-left:10px;
+  align-items: center;
+  gap: 5px;
+  /* border: 1px solid darkblue; */
+  height: 75%;
+  width: 23%;
+  font-size: 32px;
+  display: flex;
+  padding-left: 10px;
 }
 
 .on_off {
-   border: none;
-    background: transparent;
-    outline: none; 
-    font-size: inherit;
-    font-family: inherit;
-    font-weight: inherit;
-    color: green;
-    display: inline-block; 
-    width: auto; 
-    padding: 0;
-    margin: 0;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  color: green;
+  display: inline-block;
+  width: auto;
+  padding: 0;
+  margin: 0;
 }
