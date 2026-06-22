@@ -13,11 +13,11 @@
 }
 
 .container_funcionario h2 {
-  margin-top: 25px;
-  font-size: 30px;
   font-weight: bold;
   height: 100px;
   width: auto;
+  font-size: 48px;
+  padding-top: 15px;
 }
 
 .container_azul {
@@ -62,22 +62,27 @@
   box-sizing: border-box;
 }
 
-.num_chave p {
-  font-size: 13px;
-  margin: 0;
+.propri p {
+  font-size: 20px;
 }
 
-.container_azul button {
-  background-color: var(--amarelo);
-  font-size: 18px;
-  border: none;
-  border-radius: 25px;
+.propri p:hover {
+  text-decoration: underline;
   cursor: pointer;
-  font-weight: 600;
-  height: 40px;
-  width: 20%;
 }
 
-.container_azul button:hover {
+.btn {
+  width: 265px;
+  height: 66px;
+  background-color: var(--amarelo);
+  font-size: 30px;
+  font-family: 'Inter', sans-serif;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  
+}
+
+.btn:hover {
   background-color: var(--branco_puro);
 }
