@@ -12,7 +12,7 @@ function ComoFuncionaPS() {
         <img src={Logo} alt="Logo do SinalizaAI" />
       </div>
 
-      <h1>Como Funciona</h1>
+      <h1>Ajuda</h1>
 
       <div className={styles.container}>
         <div className={styles.links_container}>
@@ -28,21 +28,21 @@ function ComoFuncionaPS() {
         <div className={styles.content_container}>
           <div className={styles.content}>
             <p>
-              O <span>Sinaliza</span>
-              <span className={styles.ai}>AI</span> nasceu para transformar acessibilidade em algo{' '}
-              <span>natural, humano e presente no cotidiano.</span>
+              <span>Fluxo do usuário surdo</span>
             </p>
             <p>
-              Unindo <span>inteligência artificial, inclusão e inovação</span>, criamos uma nova
-              forma de aproximar pessoas <span>surdas</span> e <span>ouvintes</span> em qualquer
-              ambiente.
+              <span>1 - Câmera</span> captura sinais em Libras em tempo real.
             </p>
             <p>
-              Desenvolvemos experiências capazes de <span>reduzir barreiras de comunicação</span> e
-              <span>promover autonomia através da inovação.</span> Acreditamos que{' '}
-              <span>acessibilidade</span>
-              não deve ser adaptação. Deve ser padrão.
+              <span>2 - Modelo de IA</span> classifica o sinal com precisão
             </p>
+            <p>
+              <span>3 - Resposta</span> é exibida como avatar em Libras, texto e voz
+            </p>
+
+            <button onClick={() => navigate('/pages/SistemaInicio')} className={styles.btn2}>
+              Tutorial
+            </button>
           </div>
         </div>
       </div>

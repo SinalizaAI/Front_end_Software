@@ -11,7 +11,7 @@ function ComoFuncionaPO() {
         <img src={Logo} alt="Logo do SinalizaAI" />
       </div>
 
-      <h1>Como Funciona PO</h1>
+      <h1>Ajuda</h1>
 
       <div className={styles.container}>
         <div className={styles.links_container}>
@@ -27,21 +27,21 @@ function ComoFuncionaPO() {
         <div className={styles.content_container}>
           <div className={styles.content}>
             <p>
-              O <span>Sinaliza</span>
-              <span className={styles.ai}>AI</span> nasceu para transformar acessibilidade em algo{' '}
-              <span>natural, humano e presente no cotidiano.</span>
+              <span>Fluxo do usuário ouvinte</span>
             </p>
             <p>
-              Unindo <span>inteligência artificial, inclusão e inovação</span>, criamos uma nova
-              forma de aproximar pessoas <span>surdas</span> e <span>ouvintes</span> em qualquer
-              ambiente.
+              <span>1 - Voz ou Texto</span> é digitado/falado pelo atendente em português.
             </p>
             <p>
-              Desenvolvemos experiências capazes de <span>reduzir barreiras de comunicação</span> e
-              <span>promover autonomia através da inovação.</span> Acreditamos que{' '}
-              <span>acessibilidade</span>
-              não deve ser adaptação. Deve ser padrão.
+              <span>2 - Simplificador</span> converte para glosa (estrutura da Libras).
             </p>
+            <p>
+              <span>3 - Avatar exibe</span> a mensagem em Libras na tela para o usuário surdo.
+            </p>
+
+            <button onClick={() => navigate('/pages/SistemaInicio')} className={styles.btn2}>
+              Tutorial
+            </button>
           </div>
         </div>
       </div>

@@ -1,2 +1,28 @@
 @import url(../global.css);
 @import url(./ajuda.module.css);
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.content p {
+  width: 100%;
+  height: auto;
+  justify-content: space-around;
+}
+
+.btn2 {
+  width: 40%;
+  height: 30px;
+  border-radius: 30px;
+  background-color: var(--amarelo);
+  font-size: 20px;
+}
+
+.btn2:hover {
+  background-color: var(--azul_claro);
+  color: #fff;
+  cursor: pointer;
+}
