@@ -1,43 +1,104 @@
-.titulo {
-  font-size: 24px;
-  font-weight: 700;
-  text-align: center;
-  margin: 0 0 12px 0;
-}
+@import url(../global.css);
 
-.infoBox {
-  margin-top: 16px;
-  background-color: #e3eefb;
-  border-radius: 12px;
-  padding: 24px 32px;
-  flex: 1;
-}
-
-.cabecalho,
-.linha {
+.pagina {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #e8edf2;
+  padding-top: 10px;
+  padding-bottom: 40px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.cabecalho {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 10px 0;
 }
 
-.linha {
-  border-top: 1px solid #c9dcef;
+.titulo {
+  font-family: 'Inter', sans-serif;
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0;
 }
 
-.colDia {
-  width: 160px;
-  font-size: 24px;
+.logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
 }
 
-.colInicio {
-  width: 260px;
-  font-size: 24px;
+.card {
+  background-color: var(--azul_claro);
+  width: 70%;
+  height: auto !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 12px;
+  padding: 16px 16px 32px 16px;
+  box-sizing: border-box;
 }
 
-.colTermino {
-  width: 260px;
-  font-size: 24px;
+.instrucao {
+  width: 93%;
+  color: var(--branco_puro);
+  font-size: 20px;
+  font-weight: bold;
+  height: auto !important;
+  padding: 20px 0 16px 0;
+  margin: 0;
 }
 
-.cabecalho span {
-  font-weight: 700;
+.input {
+  width: 93%;
+  height: 56px !important;
+  background-color: #E8F4FF;
+  border: 0.5px solid #010B40;
+  border-radius: 10px;
+  padding: 0 20px;
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  color: #1a1a2e;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+  flex-shrink: 0;
+}
+
+.input::placeholder {
+  color: #5a6a80;
+}
+
+.input:focus {
+  outline: 2px solid var(--amarelo);
+}
+
+.botoes {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px 0 0 0;
+  height: auto !important;
+}
+
+.btn {
+  width: 200px;
+  height: 55px !important;
+  background-color: var(--amarelo);
+  font-size: 22px;
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--branco_puro);
 }

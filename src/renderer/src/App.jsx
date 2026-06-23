@@ -26,6 +26,8 @@ import Ajuda from './pages/Ajuda'
 import ComoFuncionaPS from './pages/ComoFuncionaPS'
 import TutorialPS from './pages/TutorialPS'
 import TutorialPO from './pages/TutorialPO'
+import Cadastro_Funcionario from './components/Cadastro_Funcionario'
+
 
 function App() {
   return (
@@ -58,6 +60,7 @@ function App() {
         <Route path="/pages/TutorialPS" element={<TutorialPS />} />
         <Route path="/comoFuncionaPO" element={<ComoFuncionaPO />} />
         <Route path="/pages/TutorialPO" element={<TutorialPO />} />
+        <Route path="/cadastro-funcionario" element={<Cadastro_Funcionario />} />
       </Routes>
     </HashRouter>
   )
