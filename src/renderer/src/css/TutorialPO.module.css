@@ -1,12 +1,6 @@
 @import url(../global.css);
 @import url(./ajuda.module.css);
 
-/* Garante que o link ativo receba o sublinhado nesta página também */
-.links a.active {
-  text-decoration: underline !important;
-  text-underline-offset: 6px; /* Mantém o afastamento elegante da linha */
-}
-
 .content {
   display: flex;
   flex-direction: column;
@@ -16,7 +10,7 @@
 .content p {
   width: 100%;
   height: auto;
-  justify-content: space-around;
+  text-align: center;
 }
 
 .btn2 {

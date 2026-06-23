@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom"; // Importado useLocation
 import logo from "../assets/logo.png";
 import styles from "../css/Conf_Conta.module.css";
 
@@ -12,7 +12,7 @@ const menuItems = [
   { label: "Encerrar", path: "/configuracoes/encerrar" },
 ];
 
-//substituir pelos dados reais vindos da API/contexto de autenticação
+// Substituir pelos dados reais vindos da API/contexto de autenticação
 const dadosCadastrados = {
   nome: "Administrador",
   razaoSocial: "nome_empresa",
@@ -24,11 +24,12 @@ const dadosCadastrados = {
 
 function ConfConta() {
   const navigate = useNavigate();
+  const location = useLocation(); // Hook para pegar o caminho da URL atual
 
- function handleSairDaConta() {
-  // TODO: limpar sessão/autenticação quando existir
-  navigate('/pages/SistemaInicio');
-}
+  function handleSairDaConta() {
+    // TODO: limpar sessão/autenticação quando existir
+    navigate('/pages/SistemaInicio');
+  }
 
   return (
     <div className={styles.page}>
@@ -41,8 +42,9 @@ function ConfConta() {
             {menuItems.map((item) => (
               <button
                 key={item.label}
+                /* Se a URL do navegador bater com o path do item, aplica a classe de sublinhado */
                 className={`${styles.sidebarItem} ${
-                  item.label === "Conta" ? styles.sidebarItemActive : ""
+                  location.pathname === item.path ? styles.sidebarItemActive : ""
                 }`}
                 onClick={() => navigate(item.path)}
               >
@@ -50,9 +52,9 @@ function ConfConta() {
               </button>
             ))}
           </div>
-        <button className={styles.backButton} onClick={() => navigate('/pages/SistemaInicio')}>
-                    Voltar
-                   </button>
+          <button className={styles.backButton} onClick={() => navigate('/pages/SistemaInicio')}>
+            Voltar
+          </button>
         </div>
 
         <div className={styles.content}>

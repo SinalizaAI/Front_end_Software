@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom' // Importado useLocation
 import logo from '../assets/logo.png'
 import styles from '../css/Conf_Sistema.module.css'
 
@@ -23,6 +23,7 @@ const dadosSistema = {
 
 function ConfSistema() {
   const navigate = useNavigate()
+  const location = useLocation() // Monitora a rota ativa da URL
 
   return (
     <div className={styles.page}>
@@ -35,8 +36,9 @@ function ConfSistema() {
             {menuItems.map((item) => (
               <button
                 key={item.label}
+                /* Verifica dinamicamente se o caminho da URL é igual ao do item */
                 className={`${styles.sidebarItem} ${
-                  item.label === 'Sistema' ? styles.sidebarItemActive : ''
+                  location.pathname === item.path ? styles.sidebarItemActive : ''
                 }`}
                 onClick={() => navigate(item.path)}
               >

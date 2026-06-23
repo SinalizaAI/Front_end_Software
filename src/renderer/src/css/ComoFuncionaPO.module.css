@@ -1,6 +1,12 @@
 @import url(../global.css);
 @import url(./ajuda.module.css);
 
+/* Aplica o sublinhado ao botão ativo nesta página */
+.links a.active {
+  text-decoration: underline !important;
+  text-underline-offset: 6px; /* Mantém o espaçamento idêntico às outras telas */
+}
+
 .content {
   display: flex;
   flex-direction: column;
@@ -14,16 +20,16 @@
 }
 
 .btn2 {
-  width: 40%;
-  height: 40px;
   border-radius: 30px;
   background-color: var(--amarelo);
-  font-size: 22px;
-  font-weight: 600;
+  height: 41px;
+  font-size: 28px;
+  cursor: pointer;
+  width: 225px;
 }
 
 .btn2:hover {
-  background-color: var(--azul_claro);
-  color: #fff;
+  background-color: var(--azul_escuro);
+  color: white;
   cursor: pointer;
 }

@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom' // Importado useLocation
 import logo from '../assets/logo.png'
 import styles from '../css/Conf_Acesso.module.css'
 
@@ -21,6 +21,7 @@ const USUARIOS = [
 
 function ConfAcessos() {
   const navigate = useNavigate()
+  const location = useLocation() // Monitora a rota ativa da URL
 
   return (
     <div className={styles.page}>
@@ -34,7 +35,10 @@ function ConfAcessos() {
             {MENU_ITEMS.map((item) => (
               <button
                 key={item.label}
-                className={`${styles.sidebarItem} ${item.label === 'Acessos' ? styles.sidebarItemActive : ''}`}
+                /* Valida dinamicamente se a URL bate com o path do item */
+                className={`${styles.sidebarItem} ${
+                  location.pathname === item.path ? styles.sidebarItemActive : ''
+                }`}
                 onClick={() => navigate(item.path)}
               >
                 {item.label}

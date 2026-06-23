@@ -24,6 +24,8 @@ import ConfPermissoes from './components/Conf_Permissoes'
 import ComoFuncionaPO from './pages/ComoFuncionaPO'
 import Ajuda from './pages/Ajuda'
 import ComoFuncionaPS from './pages/ComoFuncionaPS'
+import TutorialPS from './pages/TutorialPS'
+import TutorialPO from './pages/TutorialPO'
 
 function App() {
   return (
@@ -53,7 +55,9 @@ function App() {
         <Route path="/configuracoes/permissoes" element={<ConfPermissoes />} />
         <Route path="/configuracoes/acessos" element={<ConfAcessos />} />
         <Route path="/comoFuncionaPS" element={<ComoFuncionaPS />} />
+        <Route path="/pages/TutorialPS" element={<TutorialPS />} />
         <Route path="/comoFuncionaPO" element={<ComoFuncionaPO />} />
+        <Route path="/pages/TutorialPO" element={<TutorialPO />} />
       </Routes>
     </HashRouter>
   )

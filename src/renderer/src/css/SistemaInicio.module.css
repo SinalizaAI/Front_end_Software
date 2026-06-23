@@ -54,4 +54,5 @@
   background-color: var(--azul_claro);
   border: 1px solid var(--azul_escuro);
   color: var(--branco_puro);
+  cursor: pointer;
 }

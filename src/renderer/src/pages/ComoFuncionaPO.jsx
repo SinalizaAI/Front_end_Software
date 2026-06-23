@@ -1,3 +1,4 @@
+import { useState } from 'react' // Importamos o useState
 import styles from '../css/ComoFuncionaPO.module.css'
 import Logo from '../assets/logo.png'
 import { useNavigate } from 'react-router-dom'
@@ -5,20 +6,36 @@ import { useNavigate } from 'react-router-dom'
 function ComoFuncionaPO() {
   const navigate = useNavigate()
 
+  // Como estamos na página da pessoa ouvinte, ela já começa ativa por padrão
+  const [abaAtiva, setAbaAtiva] = useState('ouvinte')
+
   return (
     <section className={styles.section}>
-      <div className={styles.logo}>
-        <img src={Logo} alt="Logo do SinalizaAI" />
-      </div>
+      <img src={Logo} alt="Logo do SinalizaAI" className={styles.logo} />
 
       <h1>Ajuda</h1>
 
       <div className={styles.container}>
         <div className={styles.links_container}>
           <div className={styles.links}>
-            <a onClick={() => navigate('/Ajuda')}>Sobre</a>
-            <a onClick={() => navigate('/ComoFuncionaPS')}>Como funciona - pessoa surda</a>
-            <a onClick={() => navigate('/ComoFuncionaPO')}>Como funciona - pessoa ouvinte</a>
+            <a 
+              onClick={() => { setAbaAtiva('sobre'); navigate('/Ajuda'); }}
+              className={abaAtiva === 'sobre' ? styles.active : ''}
+            >
+              Sobre
+            </a>
+            <a 
+              onClick={() => { setAbaAtiva('surda'); navigate('/ComoFuncionaPS'); }}
+              className={abaAtiva === 'surda' ? styles.active : ''}
+            >
+              Como funciona - pessoa surda
+            </a>
+            <a 
+              onClick={() => { setAbaAtiva('ouvinte'); navigate('/ComoFuncionaPO'); }}
+              className={abaAtiva === 'ouvinte' ? styles.active : ''}
+            >
+              Como funciona - pessoa ouvinte
+            </a>
           </div>
           <button onClick={() => navigate('/pages/SistemaInicio')} className={styles.btn}>
             Voltar
@@ -39,7 +56,7 @@ function ComoFuncionaPO() {
               <span>3 - Avatar exibe</span> a mensagem em Libras na tela para o usuário surdo.
             </p>
 
-            <button onClick={() => navigate('/pages/SistemaInicio')} className={styles.btn2}>
+            <button onClick={() => navigate('/pages/TutorialPO')} className={styles.btn2}>
               Tutorial
             </button>
           </div>

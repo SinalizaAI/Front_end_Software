@@ -7,12 +7,8 @@
   width: 100%;
   height: auto;
   min-height: 100vh;
-  margin: 0;
-  padding: 40px 20px;
-  background-color: #ffffff;
-  font-family: "Segoe UI", Arial, sans-serif;
-  box-sizing: border-box;
-  overflow-y: auto;
+  font-family: 'Inter';
+  padding-top: 100px;
 }
 
 .logo {
@@ -29,7 +25,7 @@
 
 .title {
   height: auto;
-  font-size: 44px;
+  font-size: 50px;
   font-weight: 800;
   letter-spacing: 1px;
   color: #1a1a1a;
@@ -80,14 +76,23 @@
   border: none;
   color: #ffffff;
   font-size: 25px;
-  font-weight: 600;
   text-align: left;
   padding: 0;
   margin: 0;
   cursor: pointer;
-  text-decoration: underline;
+  text-decoration: none; /* Linha removida daqui */
   flex: none;
   line-height: 1;
+}
+
+/* Aplica o sublinhado dinamicamente quando clicado/ativo */
+.sidebarItem.active {
+  text-decoration: underline !important;
+  text-underline-offset: 6px;
+}
+
+.sidebarItem:hover {
+  opacity: 0.8;
 }
 
 .backButton {
@@ -98,7 +103,6 @@
   border-radius: 30px;
   padding: 0 24px;
   font-size: 28px;
-  font-weight: 700;
   cursor: pointer;
   width: 225px;
   line-height: 41px;
@@ -106,7 +110,7 @@
 }
 
 .backButton:hover {
-  background-color: #e0972a;
+  background-color: var(--branco_puro);
 }
 
 .content {
@@ -127,7 +131,6 @@
 .instructions {
   height: auto;
   font-size: 21px;
-  font-weight: 600;
   color: #1a1a1a;
   margin: 0 0 10px;
   text-align: center;
@@ -158,23 +161,19 @@
 }
 
 .enterButton {
-  margin-top: 10px;
-  width: 45%;
+  width: 265px;
+  height: 66px;
+  background-color: var(--amarelo);
+  font-size: 30px;
+  font-family: 'Inter', sans-serif;
+  border-radius: 30px;
   align-self: center;
-  height: 57px;
-  flex: none;
-  background-color: #f2a93b;
-  color: #1a1a1a;
-  border: none;
-  border-radius: 28px;
-  padding: 0;
-  font-size: 20px;
-  font-weight: 700;
   cursor: pointer;
 }
 
 .enterButton:hover {
-  background-color: #e0972a;
+  background-color: var(--azul_escuro);
+  color: #ffffff;
 }
 
 .errorMessage {

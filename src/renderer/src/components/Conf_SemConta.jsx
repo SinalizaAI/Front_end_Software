@@ -8,6 +8,9 @@ function ConfSemConta() {
   const [idUsuario, setIdUsuario] = useState('')
   const [senha, setSenha] = useState('')
   const [erro, setErro] = useState('')
+  
+  // Como estamos na tela de login de configurações de conta, o item "conta" começa ativo
+  const [itemAtivo, setItemAtivo] = useState('conta')
 
   function handleEntrar() {
     if (!idUsuario || !senha) {
@@ -27,7 +30,13 @@ function ConfSemConta() {
       <div className={styles.panel}>
         <div className={styles.sidebar}>
           <div className={styles.sidebarTop}>
-            <button className={styles.sidebarItem}>Conta</button>
+            {/* Adicionamos a verificação da classe active dinamicamente */}
+            <button 
+              className={`${styles.sidebarItem} ${itemAtivo === 'conta' ? styles.active : ''}`}
+              onClick={() => setItemAtivo('conta')}
+            >
+              Conta
+            </button>
           </div>
           <button className={styles.backButton} onClick={() => navigate(-1)}>
             Voltar
