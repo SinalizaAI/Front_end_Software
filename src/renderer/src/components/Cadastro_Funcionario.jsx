@@ -45,7 +45,7 @@ function Cadastro_Funcionario() {
         <input className={styles.input} name="turno"             type="text"     placeholder="Turno"                 value={form.turno}             onChange={handleChange} />
 
         <div className={styles.botoes}>
-          <button className={styles.btn} onClick={() => navigate('/selecionar')}>Voltar</button>
+         <button className={styles.btn} onClick={() => navigate('/funcionario')}>Voltar</button>
           <button className={styles.btn} onClick={handleCadastrar}>Cadastrar</button>
         </div>
       </div>
