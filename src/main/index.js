@@ -1,5 +1,6 @@
 import { app, BrowserWindow, ipcMain } from 'electron'
 import { join } from 'path'
+import { spawn } from 'child_process'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import WebSocket from 'ws'
 
@@ -7,6 +8,29 @@ let telaInicial = null
 let janelaSurdo = null
 let janelaOuvinte = null
 let wsPython = null
+let pythonProcess = null
+
+function iniciarPython() {
+  const pythonExe = 'C:\\SinalizaAI_prototipo\\.venv\\Scripts\\python.exe'
+  const script = 'C:\\SinalizaAI_prototipo\\etapa9_websocket.py'
+
+  pythonProcess = spawn(pythonExe, [script], {
+  cwd: 'C:\\SinalizaAI_prototipo',
+  env: { ...process.env, PYTHONIOENCODING: 'utf-8' }
+})
+
+  pythonProcess.stdout.on('data', (data) => {
+    console.log('[Python]', data.toString())
+  })
+
+  pythonProcess.stderr.on('data', (data) => {
+    console.log('[Python erro]', data.toString())
+  })
+
+  pythonProcess.on('close', (code) => {
+    console.log('[Python] processo encerrado com código', code)
+  })
+}
 
 function conectarPython() {
   wsPython = new WebSocket('ws://localhost:8765')
@@ -32,8 +56,12 @@ function conectarPython() {
         if (janelaOuvinte) janelaOuvinte.webContents.send('status-gravacao', mensagem.dado)
       }
 
+      if (mensagem.tipo === 'frame_camera') {
+        if (janelaSurdo) janelaSurdo.webContents.send('frame-camera', mensagem.dado)
+      }
+
     } catch (e) {
-      console.log('Erro ao processar mensagem do Python:', e.getMessage())
+      console.log('Erro ao processar mensagem do Python:', e.message)
     }
   })
 
@@ -59,17 +87,20 @@ function createWindows() {
       sandbox: false
     }
   })
+
   janelaSurdo = new BrowserWindow({
-    width: 900,
-    height: 670,
-    show: false,
-    title: 'SinalizaAI - Surdo',
-    autoHideMenuBar: true,
-    webPreferences: {
-      preload: join(__dirname, '../preload/index.js'),
-      sandbox: false
-    }
-  })
+  width: 900,
+  height: 670,
+  show: false,
+  title: 'SinalizaAI - Surdo',
+  autoHideMenuBar: true,
+  webPreferences: {
+    preload: join(__dirname, '../preload/index.js'),
+    sandbox: false,
+    webviewTag: true  // <-- adicionar isso
+  }
+})
+
   janelaOuvinte = new BrowserWindow({
     width: 900,
     height: 670,
@@ -104,12 +135,17 @@ app.whenReady().then(() => {
     optimizer.watchWindowShortcuts(window)
   })
 
+  iniciarPython()
   createWindows()
   conectarPython()
 
   app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) createWindows()
   })
+})
+
+app.on('before-quit', () => {
+  if (pythonProcess) pythonProcess.kill()
 })
 
 app.on('window-all-closed', () => {
@@ -134,4 +170,8 @@ ipcMain.on('parar-gravacao', () => {
   if (wsPython && wsPython.readyState === WebSocket.OPEN) {
     wsPython.send(JSON.stringify({ tipo: 'parar_gravacao' }))
   }
+})
+
+ipcMain.on('enviar-resposta-ouvinte', (_, texto) => {
+  if (janelaSurdo) janelaSurdo.webContents.send('resposta-ouvinte', texto)
 })

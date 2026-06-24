@@ -6,7 +6,10 @@ const api = {
   onVozAtendente: (callback) => ipcRenderer.on('voz-atendente', (_, dado) => callback(dado)),
   onStatusGravacao: (callback) => ipcRenderer.on('status-gravacao', (_, dado) => callback(dado)),
   iniciarGravacao: () => ipcRenderer.send('iniciar-gravacao'),
-  pararGravacao: () => ipcRenderer.send('parar-gravacao')
+  pararGravacao: () => ipcRenderer.send('parar-gravacao'),
+  onFrameCamera: (callback) => ipcRenderer.on('frame-camera', (_, dado) => callback(dado)),
+  enviarRespostaOuvinte: (texto) => ipcRenderer.send('enviar-resposta-ouvinte', texto), 
+  onRespostaOuvinte: (callback) => ipcRenderer.on('resposta-ouvinte', (_, dado) => callback(dado)) 
 }
 
 if (process.contextIsolated) {

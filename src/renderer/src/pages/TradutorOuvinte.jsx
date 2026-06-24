@@ -8,6 +8,7 @@ function TradutorOuvinte() {
   const [fraseReconhecida, setFraseReconhecida] = useState('')
   const [textoVoz, setTextoVoz] = useState('')
   const [statusGravacao, setStatusGravacao] = useState('')
+  const [textoDigitado, setTextoDigitado] = useState('')
 
   useEffect(() => {
     window.api.onFraseReconhecida((dado) => {
@@ -40,9 +41,23 @@ function TradutorOuvinte() {
               <label className={styles.label}>Digitar texto</label>
               <hr className={styles.linha} />
             </div>
-            <textarea className={styles.textarea}></textarea>
+            <textarea
+              className={styles.textarea}
+              value={textoDigitado}
+              onChange={(e) => setTextoDigitado(e.target.value)}
+            />
             <div className={styles.footer_digitado}>
-              <button className={styles.botao}>Enviar resposta</button>
+              <button
+                className={styles.botao}
+                onClick={() => {
+                  if (textoDigitado.trim()) {
+                    window.api.enviarRespostaOuvinte(textoDigitado)
+                    setTextoDigitado('')
+                  }
+                }}
+              >
+                Enviar resposta
+              </button>
             </div>
           </div>
           <div className={styles.falar}>
@@ -71,7 +86,16 @@ function TradutorOuvinte() {
                 </button>
               </div>
               <span className={styles.status}>{statusGravacao}</span>
-              <button className={styles.botao}>Enviar resposta</button>
+              <button
+                className={styles.botao}
+                onClick={() => {
+                  if (textoVoz.trim()) {
+                    window.api.enviarRespostaOuvinte(textoVoz)
+                  }
+                }}
+              >
+                Enviar resposta
+              </button>
             </div>
           </div>
         </div>

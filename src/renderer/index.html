@@ -3,13 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <title>Electron</title>
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:"
+      content="default-src 'self' https://*.rybena.com.br; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.rybena.com.br; style-src 'self' 'unsafe-inline' https://*.rybena.com.br; img-src 'self' data: https://*.rybena.com.br; connect-src 'self' https://*.rybena.com.br; font-src 'self' https://*.rybena.com.br"
     />
   </head>
-
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>

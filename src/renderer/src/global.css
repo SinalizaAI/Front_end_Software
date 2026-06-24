@@ -24,3 +24,8 @@ body {
   --azul_oc: #345f7a;
   --preto: #000;
 }
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
