@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: flex-start;
   width: 100%;
-  height: auto;
+  height: 100%;
   min-height: 100vh;
   margin: 0;
   padding: 40px 20px;
@@ -55,9 +55,7 @@
   margin: 0 auto;
   box-sizing: border-box;
   flex: none;
-  overflow-y: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  /* removido overflow-y: auto e scrollbar */
 }
 
 .panel::-webkit-scrollbar {
